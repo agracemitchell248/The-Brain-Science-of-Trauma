@@ -1,0 +1,1484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Brain Science of Trauma | UnBroken</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #203445;
+            background-color: #203445;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            min-height: 400px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 32px;
+            padding-bottom: 20px;
+            border-bottom: none;
+        }
+
+        .header-icon {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 18px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        }
+
+        .header-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+        }
+
+        .header-eyebrow {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #5da0af;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            color: #203445;
+            margin-bottom: 14px;
+            font-size: 36px;
+            font-weight: 800;
+            line-height: 1.15;
+        }
+
+        .subtitle {
+            color: #6c757d;
+            font-size: 16px;
+            line-height: 1.6;
+            max-width: 540px;
+            margin: 0 auto;
+        }
+
+        /* Progress Indicator */
+        .progress-bar-container {
+            margin-bottom: 20px;
+            background: #e0e0e0;
+            height: 6px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #5da0af 0%, #acc95d 100%);
+            transition: width 0.5s ease;
+            width: 0%;
+        }
+
+        .progress-text {
+            text-align: center;
+            color: #6c757d;
+            font-size: 14px;
+            margin-top: 8px;
+        }
+
+        /* Section Styles */
+        .step-section {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+
+        .step-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Key Concept Box */
+        .key-concept-box {
+            margin: 20px 0;
+            padding: 20px;
+            background: #fef9f2;
+            border-radius: 8px;
+            border: 2px solid #dfb852;
+        }
+
+        .key-concept-box h3 {
+            color: #203445;
+            margin-bottom: 12px;
+            font-size: 20px;
+        }
+
+        .key-concept-box p {
+            color: #203445;
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+
+        .key-concept-box ul {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+
+        .key-concept-box li {
+            margin-bottom: 10px;
+        }
+
+        /* Quote Callout */
+        .quote-callout {
+            margin: 25px 0;
+            padding: 20px;
+            background: #e8f4f6;
+            border-left: 4px solid #5da0af;
+            border-radius: 4px;
+        }
+
+        .quote-callout p {
+            font-size: 17px;
+            color: #203445;
+            line-height: 1.6;
+        }
+
+        /* Reflection Section */
+        .reflection-section {
+            margin: 20px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #d56439;
+        }
+
+        .reflection-section h2 {
+            color: #d56439;
+            margin-bottom: 8px;
+            font-size: 22px;
+        }
+
+        .reflection-timer {
+            color: #6c757d;
+            font-size: 14px;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .prompt-question {
+            font-weight: 600;
+            color: #203445;
+            font-size: 18px;
+            margin: 20px 0 15px 0;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 16px;
+            resize: vertical;
+            margin-bottom: 15px;
+            min-height: 120px;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: #5da0af;
+            box-shadow: 0 0 0 3px rgba(93, 160, 175, 0.1);
+        }
+
+        .reflection-note {
+            font-size: 14px;
+            color: #6c757d;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        /* Interactive Elements */
+        .checkbox-group {
+            margin: 20px 0;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px;
+            margin-bottom: 8px;
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .checkbox-item:hover {
+            background: #f8f9fa;
+            border-color: #5da0af;
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            margin-top: 3px;
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        .checkbox-item label {
+            cursor: pointer;
+            flex: 1;
+            color: #203445;
+            line-height: 1.5;
+        }
+
+        /* Window of Tolerance */
+        .window-tolerance {
+            margin: 25px 0;
+        }
+
+        .tolerance-zones {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .zone {
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 6px;
+            border: 2px solid transparent;
+        }
+
+        .zone:hover {
+            transform: translateX(3px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .zone.hyperarousal {
+            background: #fef5f5;
+            border-left: 4px solid #d56439;
+        }
+
+        .zone.optimal {
+            background: #f0f9f7;
+            border-left: 4px solid #acc95d;
+        }
+
+        .zone.hypoarousal {
+            background: #e8f4f6;
+            border-left: 4px solid #5da0af;
+        }
+
+        .zone.selected {
+            border: 2px solid #203445;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .zone h5 {
+            margin: 0 0 8px 0;
+            font-size: 18px;
+            color: #203445;
+        }
+
+        .zone p {
+            margin: 0;
+            font-size: 15px;
+            color: #6c757d;
+        }
+
+        /* Info Boxes */
+        .info-box {
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 6px;
+            border-left: 4px solid #5da0af;
+        }
+
+        .info-box.brain {
+            background: #fef9f2;
+            border-left-color: #dfb852;
+        }
+
+        .info-box.science {
+            background: #e8f4f6;
+            border-left-color: #5da0af;
+        }
+
+        .info-box.practice {
+            background: #f0f9f7;
+            border-left-color: #acc95d;
+        }
+
+        .info-box h4 {
+            color: #203445;
+            margin: 0 0 12px 0;
+            font-size: 18px;
+        }
+
+        .info-box p {
+            color: #203445;
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+
+        .info-box ul {
+            margin: 12px 0;
+            padding-left: 20px;
+        }
+
+        .info-box li {
+            margin-bottom: 8px;
+            color: #203445;
+        }
+
+        /* Key Insights */
+        .key-insight {
+            background: linear-gradient(135deg, #5da0af 0%, #203445 100%);
+            color: white !important;
+            padding: 20px;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 16px;
+            margin: 20px 0 !important;
+        }
+
+        .connection-box {
+            margin: 25px 0;
+            padding: 24px 26px;
+            background: #e8f4f6;
+            border-left: 5px solid #5da0af;
+            border-radius: 8px;
+        }
+
+        .connection-box h3 {
+            color: #5da0af;
+            margin-bottom: 12px;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .connection-box p {
+            color: #2c4a5a;
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        /* Navigation Buttons */
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 25px;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: #5da0af;
+            color: white;
+            flex: 1;
+        }
+
+        .btn-primary:hover {
+            background: #4a8799;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #545b62;
+        }
+
+        /* Closing / Completion Screen */
+        .closing-message {
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(135deg, #e8f4f6 0%, #f0f9f7 100%);
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border: 2px solid #5da0af;
+        }
+
+        .closing-message h2 {
+            color: #203445;
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .closing-message p {
+            color: #4a6070;
+            font-size: 17px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .closing-message .quote {
+            font-size: 20px;
+            font-style: italic;
+            color: #5da0af;
+            font-weight: 600;
+            margin: 20px auto;
+            max-width: 500px;
+            line-height: 1.5;
+        }
+
+        .closing-message ul {
+            text-align: left;
+            max-width: 600px;
+            margin: 15px auto;
+            padding-left: 25px;
+        }
+
+        .closing-message ul li {
+            margin-bottom: 10px;
+            color: #203445;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        /* Next Up Box */
+        .next-up-box {
+            margin: 20px 0;
+            padding: 25px;
+            background: #f0f9f7;
+            border-left: 4px solid #acc95d;
+            border-radius: 6px;
+        }
+
+        .next-up-box h3 {
+            color: #203445;
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .next-up-box p {
+            color: #203445;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .next-up-box ul {
+            text-align: left;
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+
+        .next-up-box ul li {
+            margin-bottom: 10px;
+            color: #203445;
+            line-height: 1.5;
+        }
+
+        /* Download Button */
+        /* Download Card */
+        .download-options {
+            margin: 25px 0 0;
+            text-align: center;
+        }
+
+        .download-card {
+            background: #203445;
+            border-radius: 12px;
+            padding: 36px 30px 30px;
+            text-align: center;
+            color: white;
+        }
+
+        .download-card .eyebrow {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #8fafc0;
+            margin-bottom: 14px;
+        }
+
+        .download-card h3 {
+            font-size: 24px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 14px;
+        }
+
+        .download-card p {
+            font-size: 15px;
+            color: #b8cdd8;
+            line-height: 1.6;
+            max-width: 520px;
+            margin: 0 auto 22px;
+        }
+
+        .btn-download {
+            display: inline-block;
+            background: #acc95d;
+            color: #1a2a1a;
+            font-size: 16px;
+            font-weight: 700;
+            padding: 16px 36px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            max-width: 420px;
+            transition: all 0.25s;
+        }
+
+        .btn-download:hover {
+            background: #99b84e;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(172, 201, 93, 0.35);
+        }
+
+        .download-privacy {
+            font-size: 13px;
+            color: #7a9aad;
+            margin-top: 12px;
+        }
+
+        /* Zoom / Drop-In Callout */
+        .zoom-callout {
+            margin: 16px 0 0;
+            padding: 36px 30px 30px;
+            background: #2a4158;
+            border: none;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .zoom-callout h3 {
+            color: white;
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .zoom-callout p {
+            color: #b8cdd8;
+            line-height: 1.6;
+            margin-bottom: 18px;
+            max-width: 540px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .zoom-link-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: #5da0af;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 700;
+            transition: all 0.25s;
+            margin: 4px 0;
+        }
+
+        .zoom-link-btn:hover {
+            background: #4a8799;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(93, 160, 175, 0.35);
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .nav-buttons {
+                flex-direction: column;
+            }
+        }
+
+        /* Guided Meditation Player */
+        .meditation-player {
+            background: #203445;
+            border-radius: 12px;
+            padding: 28px 28px 24px;
+            margin: 30px 0;
+            color: white;
+        }
+
+        .meditation-player .player-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 6px;
+        }
+
+        .meditation-player .player-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .meditation-player .player-subtitle {
+            font-size: 15px;
+            color: #b8cdd8;
+            margin-bottom: 4px;
+        }
+
+        .meditation-player .player-meta {
+            font-size: 13px;
+            color: #7a9aad;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .meditation-player .player-controls {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .meditation-player .play-btn {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: #5da0af;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: background 0.2s;
+        }
+
+        .meditation-player .play-btn:hover {
+            background: #4a8799;
+        }
+
+        .meditation-player .play-btn svg {
+            width: 20px;
+            height: 20px;
+            fill: white;
+            margin-left: 3px;
+        }
+
+        .meditation-player .progress-wrap {
+            flex: 1;
+        }
+
+        .meditation-player .audio-progress {
+            width: 100%;
+            height: 4px;
+            -webkit-appearance: none;
+            appearance: none;
+            background: #3a5a70;
+            border-radius: 2px;
+            cursor: pointer;
+            outline: none;
+            margin-bottom: 6px;
+        }
+
+        .meditation-player .audio-progress::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #5da0af;
+            cursor: pointer;
+        }
+
+        .meditation-player .time-display {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            color: #7a9aad;
+        }
+
+        .meditation-player .player-caption {
+            margin-top: 18px;
+            font-size: 14px;
+            color: #8fafc0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header" id="module-header">
+            <div class="header-icon"><img src="https://raw.githubusercontent.com/agracemitchell248/The-Brain-Science-of-Trauma/main/assets/images/brain-science-header.png" alt="Brain"></div>
+            <h1>The Brain Science of Trauma</h1>
+            <p class="subtitle">You named your losses. Now let's understand what they're doing to your brain.</p>
+        </div>
+
+        <div class="progress-bar-container">
+            <div class="progress-bar" id="progress"></div>
+        </div>
+        <p class="progress-text" id="progress-text">Step 1 of 10</p>
+
+        <!-- Step 1: Introduction -->
+        <div class="step-section active" id="step1">
+            <div class="connection-box">
+                <h3>Building on Your Previous Work</h3>
+                <p>In the last module, you explored the many layers of loss that come with job displacement — and validated that your grief is real. Now we're going to explore <strong>why</strong> your brain and body are responding the way they are. When you understand the neuroscience behind your experience, you can work <em>with</em> your brain rather than fighting against it.</p>
+            </div>
+
+            <div style="background: #f7f9fa; border-radius: 10px; padding: 26px 28px; margin: 20px 0;">
+                <p style="font-weight: 700; color: #203445; font-size: 17px; margin-bottom: 18px;">In this session you will:</p>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="display: flex; align-items: flex-start; gap: 12px; padding: 10px 0; border-bottom: 1px solid #e8ecef; color: #203445; font-size: 16px; line-height: 1.5;"><span style="color: #5da0af; font-size: 18px; flex-shrink: 0; margin-top: 1px;">✦</span> Understand why job loss registers in the brain as a survival threat — not just a setback</li>
+                    <li style="display: flex; align-items: flex-start; gap: 12px; padding: 10px 0; border-bottom: 1px solid #e8ecef; color: #203445; font-size: 16px; line-height: 1.5;"><span style="color: #5da0af; font-size: 18px; flex-shrink: 0; margin-top: 1px;">✦</span> Learn what the window of tolerance is and how to recognize when you're outside it</li>
+                    <li style="display: flex; align-items: flex-start; gap: 12px; padding: 10px 0; border-bottom: 1px solid #e8ecef; color: #203445; font-size: 16px; line-height: 1.5;"><span style="color: #5da0af; font-size: 18px; flex-shrink: 0; margin-top: 1px;">✦</span> Understand rumination — and why positive thinking doesn't work when your survival brain is activated</li>
+                    <li style="display: flex; align-items: flex-start; gap: 12px; padding: 10px 0; color: #203445; font-size: 16px; line-height: 1.5;"><span style="color: #5da0af; font-size: 18px; flex-shrink: 0; margin-top: 1px;">✦</span> Discover how neuroplasticity means your brain can heal — and what that means for your recovery</li>
+                </ul>
+            </div>
+
+            <!-- What to Expect Strip -->
+            <div style="display: flex; gap: 16px; margin: 24px 0; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 140px; background: #eef4f7; border-radius: 12px; padding: 22px 18px; text-align: center;">
+                    <div style="font-size: 28px; margin-bottom: 8px;">⏱️</div>
+                    <div style="font-weight: 700; color: #5da0af; font-size: 15px; margin-bottom: 4px;">About 35 min</div>
+                    <div style="color: #6c757d; font-size: 13px;">at your own pace</div>
+                </div>
+                <div style="flex: 1; min-width: 140px; background: #f5f0ea; border-radius: 12px; padding: 22px 18px; text-align: center;">
+                    <div style="font-size: 28px; margin-bottom: 8px;">🎧</div>
+                    <div style="font-weight: 700; color: #acc95d; font-size: 15px; margin-bottom: 4px;">Guided audio</div>
+                    <div style="color: #6c757d; font-size: 13px;">body reset practice</div>
+                </div>
+            </div>
+
+            <div class="nav-buttons">
+                <button class="btn btn-primary" onclick="nextStep()">Let's Begin →</button>
+            </div>
+        </div>
+
+        <!-- Step 2: The Two-Brain System -->
+        <div class="step-section" id="step2">
+            <h2 style="color: #5da0af; margin-bottom: 20px;">Your Brain on Job Loss</h2>
+
+            <p>Let's start with what's actually happening in your brain right now. When you lost your job, your brain didn't just process it as disappointing news or a career setback.</p>
+
+            <p style="font-size: 18px; font-weight: 600; color: #d56439; margin: 20px 0;">Your brain processed it as a threat to your survival.</p>
+
+            <div class="key-concept-box">
+                <h3>💡 Key Concept: The Two-Brain System</h3>
+                <p>You essentially have two brain systems that are constantly interacting:</p>
+            </div>
+
+            <div class="info-box brain">
+                <h4>🧠 The Survival Brain (Limbic System)</h4>
+                <p><strong>Location:</strong> Deep in your brain—the amygdala, hippocampus, and related structures</p>
+                <p><strong>Job:</strong> Keep you alive. Scan for threats. React instantly.</p>
+                <p><strong>Speed:</strong> Processes information in milliseconds—way faster than conscious thought</p>
+                <p><strong>Language:</strong> Doesn't use words. Communicates through emotions, body sensations, and urges to act</p>
+                <p><strong>When job loss happens:</strong> <span style="color: #d56439; font-weight: 600;">ALARM BELLS.</span> This system perceives loss of income, identity, and belonging as threats to survival—because historically, they were.</p>
+            </div>
+
+            <div class="info-box brain">
+                <h4>💭 The Thinking Brain (Prefrontal Cortex)</h4>
+                <p><strong>Location:</strong> Front of your brain, right behind your forehead</p>
+                <p><strong>Job:</strong> Logic, planning, perspective, complex problem-solving, emotional regulation</p>
+                <p><strong>Speed:</strong> Much slower—needs time to process and analyze</p>
+                <p><strong>Language:</strong> Words, concepts, rational thought</p>
+                <p><strong>When job loss happens:</strong> Tries to make sense of things, create plans, stay positive—but gets overwhelmed when the survival brain is too activated</p>
+            </div>
+
+            <div class="nav-buttons">
+                <button class="btn btn-secondary" onclick="previousStep()">← Previous</button>
+                <button class="btn btn-primary" onclick="nextStep()">Continue →</button>
+            </div>
+        </div>
+
+        <!-- Step 3: Why You Can't Just Think Positive -->
+        <div class="step-section" id="step3">
+            <h2 style="color: #5da0af; margin-bottom: 20px;">Why You Can't "Just Think Positive"</h2>
+
+            <p>Here's the critical part: <strong>when your survival brain detects a threat, it essentially hijacks your thinking brain</strong>. This is called <em>amygdala hijack</em>, and it's a feature, not a bug.</p>
+
+            <p>Think about it from an evolutionary perspective: If you're facing a predator, you don't have time for careful analysis and weighing options. You need to ACT NOW. So your brain has a built-in override system—when the survival brain sounds the alarm, it gets priority access to your body's resources.</p>
+
+            <div class="info-box science">
+                <h4>🔬 The Science</h4>
+                <p>When you're stressed or threatened, your brain releases cortisol and other stress hormones. These hormones actually <strong>reduce blood flow to your prefrontal cortex</strong>—your thinking brain. That's why when you're highly stressed:</p>
+                <ul>
+                    <li>You can't think clearly or make decisions easily</li>
+                    <li>You forget things you normally remember</li>
+                    <li>You struggle to see options or possibilities</li>
+                    <li>You have trouble concentrating or focusing</li>
+                    <li>Simple tasks feel overwhelming</li>
+                </ul>
+                <p style="font-weight: 600; margin-top: 15px;">This is not weakness or failure. This is biology.</p>
+            </div>
+
+            <div class="reflection-section">
+                <h2>Pause & Reflect</h2>
+                <p class="reflection-timer">Take about 2 minutes</p>
+                <p class="prompt-question">As you read this, what's one thing that now makes more sense about how you've been feeling or functioning?</p>
+                <textarea placeholder="Your reflection..."></textarea>
+                <p class="reflection-note">Your reflections are saved privately on your device only.</p>
+            </div>
+
+            <div class="nav-buttons">
+                <button class="btn btn-secondary" onclick="previousStep()">← Previous</button>
+                <button class="btn btn-primary" onclick="nextStep()">Continue →</button>
+            </div>
+        </div>
+
+        <!-- Step 4: Common Brain-Based Experiences -->
+        <div class="step-section" id="step4">
+            <h2 style="color: #5da0af; margin-bottom: 20px;">Common Brain-Based Experiences After Job Loss</h2>
+
+            <p>Because your survival brain has been activated, you might be experiencing some of these neurobiological responses:</p>
+
+            <p style="font-weight: 600; margin: 20px 0; color: #203445;">Check all that you've been experiencing:</p>
+
+            <div class="checkbox-group">
+                <div class="checkbox-item">
+                    <input type="checkbox" id="foggy">
+                    <label for="foggy"><strong>Brain Fog:</strong> Difficulty concentrating, forgetting words, feeling mentally slow. Your prefrontal cortex is running on reduced power.</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="hypervigilance">
+                    <label for="hypervigilance"><strong>Hypervigilance:</strong> Constantly scanning for threats, checking your bank account repeatedly, obsessively reading job postings, difficulty relaxing. Your amygdala is on high alert.</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="rumination">
+                    <label for="rumination"><strong>Rumination:</strong> Your mind replaying the job loss, the conversation, what you should have said, worst-case scenarios. Your brain trying to "solve" the threat by thinking about it constantly.</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="decision">
+                    <label for="decision"><strong>Decision Paralysis:</strong> Unable to make even small decisions. Your overwhelmed prefrontal cortex can't process options effectively.</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="emotional">
+                    <label for="emotional"><strong>Emotional Reactivity:</strong> Crying easily, getting angry quickly, feeling emotionally raw. Your emotional regulation system is overtaxed.</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="fatigue">
+                    <label for="fatigue"><strong>Exhaustion:</strong> Feeling tired even after sleeping. Constant stress activation is metabolically expensive—it literally uses up your energy.</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="motivation">
+                    <label for="motivation"><strong>Loss of Motivation:</strong> Struggling to start tasks, feeling apathetic. When your brain perceives the future as threatening, it's hard to generate forward momentum.</label>
+                </div>
+            </div>
+
+            <div class="key-concept-box" style="margin-top: 30px;">
+                <h3>💡 The Rumination Trap</h3>
+                <p><strong>70-80% of people experience rumination after job loss.</strong> It's one of the most common—and exhausting—responses to this kind of trauma.</p>
+                
+                <div style="display: flex; gap: 20px; margin: 20px 0; align-items: start; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 250px;">
+                        <p style="font-weight: 600; margin-bottom: 10px;">Rumination includes:</p>
+                        <ul style="margin: 0; padding-left: 20px;">
+                            <li>Spending 30-60% of waking hours thinking about the job loss</li>
+                            <li>Replaying what happened and what you "should have" done differently</li>
+                            <li>Imagining conversations or confrontations</li>
+                            <li>Asking "why me?" without finding answers</li>
+                            <li>Physical symptoms when these thoughts arise (tight chest, tension, exhaustion)</li>
+                        </ul>
+                    </div>
+
+                </div>
+                
+                <div class="info-box science" style="margin-top: 20px;">
+                    <h4>🧠 Why Your Survival Brain Creates Rumination</h4>
+                    <p>Your survival brain is trying to protect you by analyzing the "threat" over and over, attempting to find a way to prevent it from happening again. It's essentially stuck in a loop:</p>
+                    <p style="font-style: italic; margin: 15px 20px; color: #5da0af;">"If I can just figure out what went wrong, I can make sure it never happens again."</p>
+                    <p>But here's the problem: <strong>rumination doesn't solve anything</strong>. It keeps your stress response activated, drains your energy, and prevents you from moving forward. Your brain thinks it's protecting you, but it's actually keeping you stuck.</p>
+                    <p style="margin-top: 15px;"><strong>The alternative:</strong> Learning to recognize rumination as a signal from your survival brain, thank it for trying to help, and then redirect your attention to present-moment regulation tools (which we'll explore throughout UnBroken).</p>
+                </div>
+            </div>
+
+            <div class="key-insight">
+                All of these are normal neurobiological responses to threat and uncertainty. They are not character flaws or signs of weakness.
+            </div>
+
+            <div class="nav-buttons">
+                <button class="btn btn-secondary" onclick="previousStep()">← Previous</button>
+                <button class="btn btn-primary" onclick="nextStep()">Continue →</button>
+            </div>
+        </div>
+
+        <!-- Step 5: The Threat Response System -->
+        <div class="step-section" id="step5">
+            <h2 style="color: #5da0af; margin-bottom: 20px;">Your Nervous System's Threat Responses</h2>
+
+            <p>Your nervous system is the command center that coordinates everything—your brain, your body, your emotions. When it detects a threat, it has several response options:</p>
+
+            <div class="info-box">
+                <h4>⚡ Fight</h4>
+                <p>Mobilizing energy to confront the threat. You might feel anger, irritability, defensiveness, or the urge to argue or push back against something.</p>
+                <p><strong>In job loss:</strong> Anger at your employer, defensive when people ask about your situation, picking fights with loved ones, aggressive job searching</p>
+            </div>
+
+            <div class="info-box">
+                <h4>🏃 Flight</h4>
+                <p>Mobilizing energy to escape the threat. You might feel panic, anxiety, restlessness, or the urge to run away or avoid.</p>
+                <p><strong>In job loss:</strong> Avoidance of job search activities, anxiety about networking, panic attacks, staying busy to avoid feelings, isolation</p>
+            </div>
+
+            <div class="info-box">
+                <h4>🧊 Freeze</h4>
+                <p>Immobilization when you can't fight or flee. You might feel numb, stuck, paralyzed, disconnected, or unable to move forward.</p>
+                <p><strong>In job loss:</strong> Can't get started on applications, feeling stuck, watching time pass without acting, dissociation, emotional numbness</p>
+            </div>
+
+            <div class="info-box">
+                <h4>🤝 Fawn</h4>
+                <p>Attempting to appease or please the threat. You might feel the urge to accommodate, people-please, or abandon your own needs to maintain connection.</p>
+                <p><strong>In job loss:</strong> Over-apologizing in interviews, accepting unfair job offers, difficulty negotiating, saying yes to everything, losing your boundaries</p>
+            </div>
+
+            <div class="reflection-section">
+                <h2>Recognition Moment</h2>
+                <p class="reflection-timer">Take about 3 minutes</p>
+                <p class="prompt-question">Which threat responses do you notice yourself experiencing most often since your job loss?</p>
+                <textarea placeholder="I notice myself in fight mode when...&#10;&#10;I notice freeze responses when..."></textarea>
+            </div>
+
+            <div class="nav-buttons">
+                <button class="btn btn-secondary" onclick="previousStep()">← Previous</button>
+                <button class="btn btn-primary" onclick="nextStep()">Continue →</button>
+            </div>
+        </div>
+
+        <!-- Step 6: Window of Tolerance -->
+        <div class="step-section" id="step6">
+            <h2 style="color: #5da0af; margin-bottom: 20px;">The Window of Tolerance</h2>
+
+            <div class="key-concept-box">
+                <h3>💡 Key Concept: Window of Tolerance</h3>
+                <p>One of the most helpful concepts in understanding trauma is the "window of tolerance"—developed by Dr. Dan Siegel. This describes the optimal zone where your nervous system is regulated and you can function effectively.</p>
+            </div>
+
+            <p>Think about your nervous system like a zone where you function best. When you're inside your window of tolerance, you can think clearly, manage emotions, and respond flexibly to challenges. When you're outside it—either too activated or too shut down—everything becomes harder.</p>
+
+            <div class="window-tolerance">
+                <p style="font-weight: 600; margin-bottom: 15px; color: #203445;">Click on the zone that best describes where you find yourself most often right now:</p>
+                
+                <div class="tolerance-zones">
+                    <div class="zone hyperarousal" onclick="selectZone(this, 'hyper')">
+                        <h5>↑ HYPERAROUSAL (Above the Window)</h5>
+                        <p>Overwhelmed, anxious, panicky, racing thoughts, can't calm down, hypervigilant, emotionally flooded, reactive, irritable</p>
+                    </div>
+                    
+                    <div class="zone optimal" onclick="selectZone(this, 'optimal')">
+                        <h5>→ OPTIMAL ZONE (Inside the Window)</h5>
+                        <p>Can think clearly, emotionally flexible, able to connect with others, can handle stress, creative problem-solving, grounded and present</p>
+                    </div>
+                    
+                    <div class="zone hypoarousal" onclick="selectZone(this, 'hypo')">
+                        <h5>↓ HYPOAROUSAL (Below the Window)</h5>
+                        <p>Numb, shut down, exhausted, disconnected, can't feel emotions, passive, hopeless, dissociated, no energy</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-box practice">
+                <h4>💡 Key Understanding</h4>
+                <p>Job loss often pushes people outside their window of tolerance—sometimes into hyperarousal (anxiety, panic, overwhelm) and sometimes into hypoarousal (numbness, shutdown, depression). You might even flip between both.</p>
+                <p><strong>The goal isn't to never leave your window—that's impossible. The goal is to:</strong></p>
+                <ul>
+                    <li>Notice when you're outside your window</li>
+                    <li>Understand what pushed you out</li>
+                    <li>Have tools to gently guide yourself back</li>
+                    <li>Gradually widen your window over time</li>
+                </ul>
+            </div>
+
+            <div class="nav-buttons">
+                <button class="btn btn-secondary" onclick="previousStep()">← Previous</button>
+                <button class="btn btn-primary" onclick="nextStep()">Continue →</button>
+            </div>
+        </div>
+
+        <!-- Step 7: Recognizing Your Signals -->
+        <div class="step-section" id="step7">
+            <h2 style="color: #5da0af; margin-bottom: 20px;">Your Nervous System Signals</h2>
+
+            <p>Your body sends signals when you're becoming dysregulated—often before your mind catches up. Learning to recognize these early warning signs gives you a chance to intervene before you're fully outside your window.</p>
+
+            <p style="font-weight: 600; margin: 20px 0; color: #203445;">Check the physical sensations you experience when stressed:</p>
+
+            <div class="checkbox-group">
+                <div class="checkbox-item">
+                    <input type="checkbox" id="heart">
+                    <label for="heart">Racing or pounding heart</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="breath">
+                    <label for="breath">Shallow or rapid breathing</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="tension">
+                    <label for="tension">Muscle tension (shoulders, jaw, stomach)</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="temp">
+                    <label for="temp">Feeling hot or cold</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="stomach">
+                    <label for="stomach">Upset stomach or nausea</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="heavy">
+                    <label for="heavy">Feeling heavy or weighted down</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="shaky">
+                    <label for="shaky">Trembling or shakiness</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="numb">
+                    <label for="numb">Numbness or disconnection from body</label>
+                </div>
+            </div>
+
+            <div class="reflection-section">
+                <h2>Your Early Warning System</h2>
+                <p class="reflection-timer">Take about 2 minutes</p>
+                <p class="prompt-question">Looking at what you checked, what are your top 3 early warning signs that you're becoming dysregulated? These are your body's smoke detectors—learn them well.</p>
+                <textarea placeholder="1.&#10;2.&#10;3."></textarea>
+            </div>
+
+            <div class="nav-buttons">
+                <button class="btn btn-secondary" onclick="previousStep()">← Previous</button>
+                <button class="btn btn-primary" onclick="nextStep()">Continue →</button>
+            </div>
+        </div>
+
+        <!-- Step 8: Neuroplasticity -->
+        <div class="step-section" id="step8">
+            <h2 style="color: #5da0af; margin-bottom: 20px;">Neuroplasticity & Hope</h2>
+
+            <div class="key-concept-box">
+                <h3>💡 Key Concept: Neuroplasticity</h3>
+                <p><strong>Your brain can change.</strong> This is called neuroplasticity, and it's one of the most hopeful discoveries in neuroscience.</p>
+                <p>For a long time, scientists believed that adult brains were fixed—you couldn't grow new neural connections after a certain age. We now know that's completely false.</p>
+            </div>
+
+            <div class="info-box science">
+                <h4>🔬 The Science of Neuroplasticity</h4>
+                <p><strong>Neuroplasticity</strong> is your brain's ability to reorganize itself by forming new neural connections throughout your life. Every time you:</p>
+                <ul>
+                    <li>Learn something new</li>
+                    <li>Practice a new skill or behavior</li>
+                    <li>Have a new experience</li>
+                    <li>Shift your attention in new ways</li>
+                    <li>Challenge old patterns</li>
+                </ul>
+                <p style="margin-top: 15px;">...you're literally creating new neural pathways and strengthening or weakening existing ones.</p>
+            </div>
+
+            <p>Think of your brain like a forest. The paths you walk frequently become well-worn trails—easy to follow, almost automatic. Paths you rarely use become overgrown.</p>
+
+            <p>When you're stuck in anxiety, rumination, or dysregulation, you're walking those same neural pathways over and over, making them even stronger.</p>
+
+            <p style="font-size: 18px; font-weight: 600; color: #d56439; margin: 20px 0;">But you can create new paths.</p>
+
+            <p>Every time you practice a new response—every time you notice your dysregulation and use a tool to regulate, every time you challenge a negative thought, every time you choose self-compassion over self-criticism—you're literally building new neural trails.</p>
+
+            <div class="nav-buttons">
+                <button class="btn btn-secondary" onclick="previousStep()">← Previous</button>
+                <button class="btn btn-primary" onclick="nextStep()">Continue →</button>
+            </div>
+        </div>
+
+        <!-- Step 9: How UnBroken Practices Work -->
+        <div class="step-section" id="step9">
+            <h2 style="color: #5da0af; margin-bottom: 20px;">How the UnBroken Practices Work with Your Brain</h2>
+
+            <p>The UnBroken program isn't just offering you tools randomly—each practice is designed to work specifically with your neurobiology:</p>
+
+            <div class="info-box practice">
+                <h4>🎯 Reset Exercises</h4>
+                <p><strong>What they do:</strong> Help you move back into your window of tolerance when you're dysregulated</p>
+                <p><strong>How they work with your brain:</strong> Physical movement and sensation-based practices activate your vagus nerve (the nerve that calms your nervous system) and help discharge the stress energy that gets stuck in your body. They also give your prefrontal cortex a chance to come back online.</p>
+            </div>
+
+            <div class="info-box practice">
+                <h4>🎯 Name It Videos</h4>
+                <p><strong>What they do:</strong> Put words to difficult emotions and experiences</p>
+                <p><strong>How they work with your brain:</strong> Neuroscience research shows that labeling emotions ("affect labeling") actually reduces amygdala activation. When you name what you're feeling, you engage your prefrontal cortex, which helps regulate the limbic system. Dr. Dan Siegel calls this "name it to tame it."</p>
+            </div>
+
+            <div class="info-box practice">
+                <h4>🎯 Breathwork</h4>
+                <p><strong>What it does:</strong> Regulates your nervous system through controlled breathing</p>
+                <p><strong>How it works with your brain:</strong> Slow, deep breathing activates your parasympathetic nervous system—the "rest and digest" system that counteracts the stress response. It's one of the few direct ways you can consciously influence your autonomic nervous system.</p>
+            </div>
+
+            <div class="info-box practice">
+                <h4>🎯 Emotion Check-ins</h4>
+                <p><strong>What they do:</strong> Build awareness of your emotional state</p>
+                <p><strong>How they work with your brain:</strong> Regular check-ins strengthen your interoception (awareness of internal states) and create space between stimulus and response. This practice literally builds new neural connections that support emotional regulation.</p>
+            </div>
+
+            <div class="key-insight">
+                You're not just "managing symptoms" or "coping" with UnBroken. You're actively rewiring your nervous system. Every practice is training your brain to respond differently to stress and threat. This is actual, measurable, neurobiological change.
+            </div>
+
+            <div class="nav-buttons">
+                <button class="btn btn-secondary" onclick="previousStep()">← Previous</button>
+                <button class="btn btn-primary" onclick="nextStep()">Continue →</button>
+            </div>
+        </div>
+
+        <!-- Step 10: Integration & Key Insights -->
+        <div class="step-section" id="step10">
+            <h2>Integration: What I've Learned About My Brain</h2>
+            
+            <p style="max-width: 700px; margin: 0 auto 30px; font-size: 17px;">
+                Before moving to Self-Compassion, take a moment to reflect on what you've learned.
+            </p>
+
+            <div class="reflection-prompt">
+                <label style="font-weight: 600; display: block; margin-bottom: 10px;">
+                    What's the most important thing you learned today about how your brain responds to trauma?
+                </label>
+                <textarea 
+                    id="integration-1" 
+                    placeholder="Example: 'I learned that rumination isn't a character flaw—it's my brain trying to protect me...'"
+                    style="width: 100%; min-height: 120px; padding: 15px; border: 1px solid #ddd; border-radius: 8px; font-size: 15px; font-family: inherit; resize: vertical;">
+                </textarea>
+            </div>
+
+            <div class="reflection-prompt" style="margin-top: 25px;">
+                <label style="font-weight: 600; display: block; margin-bottom: 10px;">
+                    What's one thing you'll do differently now that you understand your nervous system better?
+                </label>
+                <textarea 
+                    id="integration-2" 
+                    placeholder="Example: 'When I notice hyperarousal, I'll use breathwork instead of pushing through...'"
+                    style="width: 100%; min-height: 120px; padding: 15px; border: 1px solid #ddd; border-radius: 8px; font-size: 15px; font-family: inherit; resize: vertical;">
+                </textarea>
+            </div>
+
+            <div class="key-concept-box" style="margin-top: 35px;">
+                <h3 style="margin-top: 0;">💡 Remember This</h3>
+                <p style="font-size: 16px; line-height: 1.7;">
+                    Your brain isn't broken. The way you're responding—the fog, the exhaustion, the rumination—it's all your nervous system doing exactly what it's designed to do when it perceives threat. Now you know <em>why</em> it happens and <em>what</em> helps it shift.
+                </p>
+            </div>
+
+
+            <div class="meditation-player">
+                <div class="player-header">
+                    <span style="font-size:20px;">🎧</span>
+                    <span class="player-title">Guided Practice</span>
+                </div>
+                <p class="player-subtitle">Mapping Your Stress Response</p>
+                <p class="player-meta">Audio file: mapping-your-stress-response.m4a &mdash; approx. 7 minutes</p>
+                <div class="player-controls">
+                    <button class="play-btn" id="playBtn" onclick="togglePlay()">
+                        <svg id="playIcon" viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+                    </button>
+                    <div class="progress-wrap">
+                        <input type="range" class="audio-progress" id="audioProgress" value="0" min="0" step="0.1" oninput="seekAudio(this.value)">
+                        <div class="time-display">
+                            <span id="currentTime">0:00</span>
+                            <span id="totalTime">0:00</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="player-caption">Find a comfortable position. Eyes open or closed. This practice asks very little of you.</p>
+                <audio id="meditationAudio" preload="metadata">
+                    <source src="https://agracemitchell248.github.io/The-Brain-Science-of-Trauma/assets/audio/brain-science-meditation.m4a" type="audio/mp4">
+                </audio>
+            </div>
+
+            <div class="nav-buttons">
+                <button class="btn btn-secondary" onclick="previousStep()">← Previous</button>
+                <button class="btn btn-primary" onclick="nextStep()">See What's Next →</button>
+            </div>
+        </div>
+
+        <!-- Step 11: Completion + Next Module + Download + Drop-In -->
+        <div class="step-section" id="step11">
+            <div class="closing-message">
+                <h2>You Did It</h2>
+                <p>You just learned the neuroscience of why job loss feels this hard—and that's powerful knowledge.</p>
+                
+                <div class="quote">
+                    "Your brain isn't broken.<br>
+                    It's responding exactly as it's designed to."
+                </div>
+                
+                <p style="margin-top: 30px;"><strong>You now understand:</strong></p>
+                <ul style="text-align: left; max-width: 600px; margin: 20px auto;">
+                    <li>Why positive thinking fails when your survival brain is activated</li>
+                    <li>What the window of tolerance is and how to recognize when you're outside it</li>
+                    <li>How neuroplasticity means your brain can heal and adapt</li>
+                    <li>The science behind the Reset exercises, breathwork, and regulation tools</li>
+                </ul>
+            </div>
+
+            <div class="next-up-box">
+                <h3>💚 Coming Up Next: Self-Compassion</h3>
+                <p><strong>Here's how it connects:</strong></p>
+                <p style="margin: 15px 0;">Now that you understand <em>why</em> your brain responds this way, you're ready for the most important tool in your recovery: <strong>self-compassion</strong>.</p>
+                <p>In the next module, you'll learn:</p>
+                <ul style="text-align: left;">
+                    <li><strong>Why self-compassion isn't self-pity</strong> (and why it's more powerful than self-esteem)</li>
+                    <li><strong>The three components</strong> of self-compassion that actually change your nervous system</li>
+                    <li><strong>How to practice it</strong> when you're in the middle of survival mode</li>
+                    <li><strong>What to do</strong> when self-compassion feels impossible or fake</li>
+                </ul>
+                <p style="margin-top: 15px; font-style: italic;">Self-compassion is what allows your nervous system to shift from threat to safety. It's not optional—it's essential.</p>
+            </div>
+
+            <div class="download-options">
+                <div class="download-card">
+                    <p class="eyebrow">Before You Go</p>
+                    <h3>Keep what you wrote today.</h3>
+                    <p>Your reflections only live here, on this screen. Download a copy to hold onto... for yourself, for your therapist, for whatever comes next.</p>
+                    <button class="btn btn-download" onclick="downloadReflectionsAsPDF()">
+                        ↓ Download My Reflections as PDF
+                    </button>
+                    <p class="download-privacy">Saved privately on your device. Nothing leaves this page.</p>
+                </div>
+            </div>
+
+            <div class="zoom-callout">
+                <h3>You don't have to process this alone.</h3>
+                <p>Our free drop-in sessions are a space to talk, breathe, and be in community with others who understand this.</p>
+                <a href="https://www.unbrokenpathways.org/registration" target="_blank" class="zoom-link-btn">
+                    Join a Drop-In Session →
+                </a>
+            </div>
+
+            <div class="nav-buttons" style="justify-content: center; margin-top: 30px;">
+                <button class="btn btn-secondary" onclick="previousStep()">← Previous</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- jsPDF Library for PDF generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <script>
+        let currentStep = 1;
+        const totalSteps = 11;
+
+        function updateProgress() {
+            const progress = (currentStep / totalSteps) * 100;
+            document.getElementById('progress').style.width = progress + '%';
+            document.getElementById('progress-text').textContent = `Step ${currentStep} of ${totalSteps}`;
+        }
+
+        function updateHeader() {
+            document.getElementById('module-header').style.display = currentStep === 1 ? '' : 'none';
+        }
+
+        function nextStep() {
+            if (currentStep < totalSteps) {
+                document.getElementById('step' + currentStep).classList.remove('active');
+                currentStep++;
+                document.getElementById('step' + currentStep).classList.add('active');
+                updateProgress();
+                updateHeader();
+                window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        }
+
+        function previousStep() {
+            if (currentStep > 1) {
+                document.getElementById('step' + currentStep).classList.remove('active');
+                currentStep--;
+                document.getElementById('step' + currentStep).classList.add('active');
+                updateProgress();
+                updateHeader();
+                window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        }
+
+        function selectZone(element, zone) {
+            // Remove selected class from all zones
+            document.querySelectorAll('.zone').forEach(z => {
+                z.classList.remove('selected');
+            });
+            
+            // Add selected class to clicked zone
+            element.classList.add('selected');
+            
+            // Store the selection
+            console.log('Selected zone:', zone);
+        }
+
+        // Initialize progress
+        updateProgress();
+
+        // Audio Player Functions
+        function togglePlay() {
+            const audio = document.getElementById('meditationAudio');
+            const playBtn = document.getElementById('playBtn');
+            if (audio.paused) {
+                const playPromise = audio.play();
+                if (playPromise !== undefined) {
+                    playPromise.then(() => {
+                        playBtn.textContent = '⏸';
+                    }).catch(err => {
+                        console.log('Play interrupted:', err);
+                    });
+                }
+            } else {
+                audio.pause();
+                playBtn.textContent = '▶';
+            }
+        }
+
+        function seekAudio(value) {
+            const audio = document.getElementById('meditationAudio');
+            audio.currentTime = (value / 100) * audio.duration;
+        }
+
+        // Update progress bar and timer as audio plays
+        document.addEventListener('DOMContentLoaded', function() {
+            const audio = document.getElementById('meditationAudio');
+            if (audio) {
+                audio.addEventListener('timeupdate', function() {
+                    const progress = (audio.currentTime / audio.duration) * 100;
+                    const progressBar = document.getElementById('audioProgress');
+                    if (progressBar) progressBar.value = progress;
+
+                    const timer = document.getElementById('audioTimer');
+                    if (timer) {
+                        const mins = Math.floor(audio.currentTime / 60);
+                        const secs = Math.floor(audio.currentTime % 60).toString().padStart(2, '0');
+                        timer.textContent = mins + ':' + secs;
+                    }
+                });
+                audio.addEventListener('ended', function() {
+                    const playBtn = document.getElementById('playBtn');
+                    if (playBtn) playBtn.textContent = '▶';
+                });
+            }
+        });
+
+        // Download and Email Functions
+        function downloadReflectionsAsPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            
+            // Get all reflection data
+            const integration1 = document.getElementById('integration-1')?.value || '';
+            const integration2 = document.getElementById('integration-2')?.value || '';
+            
+            if (!integration1 && !integration2) {
+                alert('Please complete at least one reflection before downloading.');
+                return;
+            }
+            
+            // PDF setup
+            const pageWidth = 210;
+            const pageHeight = 297;
+            const margin = 20;
+            let yPosition = 20;
+            
+            // Helper function to add text with wrapping
+            function addText(text, fontSize = 11, isBold = false) {
+                doc.setFontSize(fontSize);
+                doc.setFont(undefined, isBold ? 'bold' : 'normal');
+                const lines = doc.splitTextToSize(text, pageWidth - (2 * margin));
+                
+                if (yPosition + (lines.length * 7) > pageHeight - 20) {
+                    doc.addPage();
+                    yPosition = 20;
+                }
+                
+                doc.text(lines, margin, yPosition);
+                yPosition += lines.length * 7 + 5;
+            }
+            
+            // Add header
+            doc.setFontSize(18);
+            doc.setFont(undefined, 'bold');
+            doc.text('The Brain Science of Trauma', margin, yPosition);
+            yPosition += 15;
+            
+            doc.setFontSize(11);
+            doc.setFont(undefined, 'normal');
+            const today = new Date().toLocaleDateString('en-US', { 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            });
+            doc.text(today, margin, yPosition);
+            yPosition += 15;
+            
+            // Add reflections
+            if (integration1) {
+                addText('INTEGRATION REFLECTION 1:', 14, true);
+                addText('What\'s the most important thing you learned about how your brain responds to trauma?', 11, true);
+                addText(integration1);
+                yPosition += 5;
+            }
+            
+            if (integration2) {
+                addText('INTEGRATION REFLECTION 2:', 14, true);
+                addText('What\'s one thing you\'ll do differently now that you understand your nervous system better?', 11, true);
+                addText(integration2);
+            }
+            
+            // Add footer
+            if (yPosition > pageHeight - 40) {
+                doc.addPage();
+                yPosition = 20;
+            }
+            yPosition = pageHeight - 20;
+            doc.setFontSize(9);
+            doc.setFont(undefined, 'italic');
+            doc.text('UnBroken - The Brain Science of Trauma | © ' + new Date().getFullYear() + ' Places to Thrive, Inc. All rights reserved.', margin, yPosition);
+            
+            const filename = `Unbroken-BrainScience-${new Date().toISOString().split('T')[0]}.pdf`;
+            doc.save(filename);
+        }
+
+    </script>
+
+    <!-- Copyright Footer -->
+    <div style="text-align:center; padding: 20px; font-size:13px; color:#6c757d; margin-top:10px;">
+        © <span id="copyright-year"></span> Places to Thrive, Inc. All rights reserved.<br>
+        UnBroken is a program of Places to Thrive, Inc. | <a href="https://www.unbrokenpathways.org" target="_blank" style="color:#5da0af; text-decoration:none;">unbrokenpathways.org</a>
+    </div>
+    <script>document.getElementById('copyright-year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
